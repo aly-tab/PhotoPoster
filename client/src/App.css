@@ -1,0 +1,361 @@
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.link {
+  color: purple;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: rgb(255, 145, 255);
+}
+
+.logout {
+  height: 50px;
+  width: 100px;
+  font-size: 1em;
+  margin-left: 25px;
+  border: 5px solid black;
+  background-color: white;
+}
+
+#form {
+  width: 90%;
+  margin: 0 auto 15px auto;
+}
+
+.center {
+  text-align: center;
+}
+
+.text {
+  width: 30%;
+  height: 225px; 
+}
+
+.upload {
+  border: 1px solid black;
+  width: 28%;
+  padding: 15px 15px;
+  margin: 0 auto;
+}
+
+.submit {
+  text-align: center;
+  margin: 15px auto 15px auto;
+}
+
+.submit-btn {
+  height: 50px;
+  width: 100px;
+  font-size: 1em;
+  border: 5px solid black;
+  background-color: white;
+}
+
+.submit-btn:hover {
+  color: rgb(255, 145, 255);  
+  border: 5px solid rgb(255, 145, 255);
+}
+
+.submit-btn:hover {
+  color: rgb(255, 145, 255);  
+  border: 5px solid rgb(255, 145, 255);
+}
+
+.photo {
+  width: 500px;
+  margin: 0 25px 50px 25px;
+}
+
+.photo img {
+  margin: 0 auto;
+  width: 100%;   
+}
+
+#block {
+  height: 450px;
+  border-bottom: 1px solid black;
+  padding: 25px 0;
+  margin-bottom: 50px;
+}
+
+#block h1 {
+  text-align: center;
+  font-size: 4em;
+  line-height: 325px;
+}
+
+.link {
+  margin: 0 25px;
+}
+
+#list {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.search {
+  margin-top: 50px;
+  width: 100%;
+  height: 50px;
+  font-size: 2em;
+  border: 5px solid black;
+}
+
+textarea {
+  resize: none;
+}
+
+#photo-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  width: 92.5%;
+  margin: 0 auto;
+}
+
+#detail {
+  width: 60%;
+  margin: 0 auto 100px auto;
+
+}
+
+#detail img {
+  display: block;
+  margin: 50px auto 0 auto;
+  width: 700px;
+}
+
+#detail p {
+  text-align: center;
+}
+
+#detail input {
+  display: block;
+  margin: 0 auto;
+}
+
+#detail textarea {
+  width: 660px;
+  margin: 0 auto;
+  display: block;
+}
+
+.submit-btn-edit {
+  padding: 15px 30px;
+  border: 5px solid black;
+  background-color: white;
+}
+
+.heart {
+  width: 150px;
+}
+
+#detail-btns {
+  float: right;
+}
+
+#edit-delete {
+  float: right;
+}
+
+#account {
+  text-align: center; 
+}
+
+.delete {
+  border: 3px solid black;
+  background-color: white; 
+  padding: 5px 10px;
+}
+
+.btm-link {
+  color: purple;
+  text-decoration: none;
+  padding-right: 15px;
+}
+
+.btm-link:hover {
+  color: rgb(255, 145, 255);
+}
+
+button:hover {
+  color: rgb(255, 145, 255);  
+  border: 5px solid rgb(255, 145, 255);
+}
+
+.delete:hover {
+  border: 3px solid rgb(255, 145, 255);  
+}
+
+.submit-btn-edit:hover {
+  color: rgb(255, 145, 255);  
+  border: 5px solid rgb(255, 145, 255); 
+}
+
+.row {
+  display: flex;
+  margin: 150px auto 0 auto;
+  width: 60%;
+}
+
+.col {
+  margin: 0 125px;
+}
+
+.btn-btn-primary {
+  margin-top: 25px;
+  border: 5px solid black;
+  background-color: white;
+  padding: 10px 20px;
+  font-size: 1em;
+}
+
+.btn-btn-primary:hover {
+  color: rgb(255, 145, 255);  
+  border: 5px solid rgb(255, 145, 255);  
+}
+
+@media only screen and (max-width: 1790px) {
+  #photo-list {
+    width: 70%;
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (max-width: 1575px) {
+  #photo-list {
+    width: 35%; 
+  }
+}
+
+@media only screen and (max-width: 1375px) {
+  #photo-list {
+    width: 40%;
+  }
+  #detail img {
+    width: 500px;
+  }
+
+  #form textarea {
+    width: 500px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  #photo-list {
+    width: 45%;
+    
+  }
+
+  .upload {
+    width: 38%;
+  }
+  .text {
+    width: 40%;
+  }
+  #form textarea {
+    width: 450px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  #photo-list {
+    width: 50%;
+    
+  }
+
+  #header {
+    width: 95%;
+  }
+
+  #header h1 {
+    font-size: 1.3em;
+  }
+
+  .link {
+    font-size: .9em;
+    padding: 0px;
+    margin: 10px;
+  }
+
+  .logout {
+    margin-left: 10px;
+  }
+  #form textarea {
+    width: 400px;
+  }
+
+  #header {
+    margin-top: 15px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #photo-list {
+    width: 55%;
+  }
+  #detail img {
+    width: 275px;
+  }
+  #form textarea {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #photo-list {
+    width: 60%;
+    
+  }
+  .upload {
+    width: 48%;
+  }
+  .text {
+    width: 50%;
+  }
+
+  #header h1 {
+    font-size: .8em;
+  }
+
+  .link {
+    font-size: .65em;
+    padding: 0px;
+    margin: 5px;
+  }
+
+  .logout {
+    margin-left: 5px;
+    font-size: .6em;
+    width: 70px;
+  }
+
+  .search {
+    font-size: 1.4em;
+  }
+  #form textarea {
+    width: 225px;
+  }
+  
+}
+
+@media only screen and (max-width: 400px) {
+  #photo-list {
+    width: 65%;
+  }
+
+  #detail img {
+    width: 200px;
+  }
+
+  #form textarea {
+    width: 175px;
+  }
+}
