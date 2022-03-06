@@ -22,7 +22,7 @@ function App() {
           <Route exact path="https://photoposter.herokuapp.com/">
             <SignIn/>
           </Route>
-          <Route exact path="https://photoposter.herokuapp.com//dashboard">
+          <Route exact path="https://photoposter.herokuapp.com/dashboard">
             <Dashboard/>
           </Route>
           <Route exact path="/account">
