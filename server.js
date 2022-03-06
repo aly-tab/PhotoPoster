@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 8000;
 require('./server/config/mongoose.config');
 
 app.use(cookieParser());
-app.use(cors({credentials: true, origin: 'https://photoposter.herokuapp.com/'}));
+app.use(cors({credentials: true, origin: 'https://photoposter.herokuapp.com'}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
