@@ -19,7 +19,7 @@ const DetailView = () => {
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
-        axios.get("http://localhost:8000/api/users/loggedIn", {withCredentials:true})
+        axios.get("https://photoposter.herokuapp.com/api/users/loggedIn", {withCredentials:true})
             .then(res => {
                 console.log(res);
                 setLoggedInUser(res.data);
@@ -35,7 +35,7 @@ const DetailView = () => {
     }, [])
 
     const logout = (e) => {
-        axios.get("http://localhost:8000/api/users/logout", {withCredentials:true})
+        axios.get("https://photoposter.herokuapp.com/api/users/logout", {withCredentials:true})
             .then(res => {
                 console.log(res);
                 history.push("/");

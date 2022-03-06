@@ -7,7 +7,7 @@ const RedirectDeleteButton = props => {
     const history = useHistory();
 
     const onClickHandler = e => {
-        axios.delete('http://localhost:8000/api/photos/' + id)
+        axios.delete('https://photoposter.herokuapp.com/api/photos/' + id)
             .then(response => {
                 console.log(response);
                 history.push("/dashboard");

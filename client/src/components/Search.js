@@ -12,7 +12,7 @@ const Search = () => {
     const [users, setUsers] = useState({});
 
     useEffect(() => {
-        axios.get("http://localhost:8000/api/users/loggedIn", {withCredentials:true})
+        axios.get("https://photoposter.herokuapp.com/api/users/loggedIn", {withCredentials:true})
             .then(res => {
                 console.log(res);
                 setLoggedInUser(res.data);
@@ -24,7 +24,7 @@ const Search = () => {
     }, [])
 
     const logout = (e) => {
-        axios.get("http://localhost:8000/api/users/logout", {withCredentials:true})
+        axios.get("https://photoposter.herokuapp.com/api/users/logout", {withCredentials:true})
             .then(res => {
                 console.log(res);
                 history.push("/");
@@ -35,7 +35,7 @@ const Search = () => {
     }
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/user/')
+        axios.get('https://photoposter.herokuapp.com/api/user/')
             .then((response) => {
                 console.log(response);
                 setUsers(response.data);
