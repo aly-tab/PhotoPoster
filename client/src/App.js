@@ -19,7 +19,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Switch>
-          <Route exact path="https://photoposter.herokuapp.com/">
+          <Route exact path="https://photoposter.herokuapp.com">
             <SignIn/>
           </Route>
           <Route exact path="https://photoposter.herokuapp.com/dashboard">
