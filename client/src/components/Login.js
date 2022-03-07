@@ -20,7 +20,7 @@ const Login = () => {
 
     const login = (e) => {
         e.preventDefault();
-        axios.post("https://photoposter.herokuapp.com/api/login", formInfo, {withCredentials:true})
+        axios.post("/api/login", formInfo, {withCredentials:true})
             .then(res => {
                 console.log(res);                
                 if (res.data.msg == "success!") {

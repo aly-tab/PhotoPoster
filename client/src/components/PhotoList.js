@@ -10,7 +10,7 @@ const PhotoList = (props) => {
     const [photos, setPhotos] = useState([]);
 
     useEffect(() => {
-        axios.get('https://photoposter.herokuapp.com/api/photos/user/' + userId)
+        axios.get('/api/photos/user/' + userId)
             .then((response) => {
                 console.log(response);
                 console.log(userId);

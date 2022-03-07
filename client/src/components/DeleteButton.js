@@ -6,7 +6,7 @@ const DeleteButton = props => {
     const {removeFromDom } = props;
 
     const onClickHandler = e => {
-        axios.delete('https://photoposter.herokuapp.com/api/photos/' + id)
+        axios.delete('/api/photos/' + id)
             .then(response => {
                 console.log(response);
                 removeFromDom(id);

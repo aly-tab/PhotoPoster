@@ -16,7 +16,7 @@ const Dashboard = () => {
     const [images, setImages] = useState([]);
 
     useEffect(() => {
-        axios.get("https://photoposter.herokuapp.com/api/users/loggedIn", {withCredentials:true})
+        axios.get("/api/users/loggedIn", {withCredentials:true})
             .then(res => {
                 console.log(res);
                 setLoggedInUser(res.data);
@@ -28,7 +28,7 @@ const Dashboard = () => {
     }, [])
 
     const logout = (e) => {
-        axios.get("https://photoposter.herokuapp.com/api/users/logout", {withCredentials:true})
+        axios.get("/api/users/logout", {withCredentials:true})
             .then(res => {
                 console.log(res);
                 history.push("/");
