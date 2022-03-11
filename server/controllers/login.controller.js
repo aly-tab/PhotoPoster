@@ -25,7 +25,7 @@ class UserController {
                         .then(passwordIsValid => {
                             if (passwordIsValid) {
                                 res.cookie("usertoken", jwt.sign({_id: user._id}, process.env.SECRET_KEY) , {httpOnly:true})
-                                res.json({msg: "success!"});
+                                .json({msg: "success!"});
                             } else {
                                 res.json({msg: "Invalid login attempt"})
                             }
