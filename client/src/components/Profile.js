@@ -16,7 +16,7 @@ const Dashboard = () => {
     const [images, setImages] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:4000/api/users/loggedIn", {withCredentials:true})
+        axios.get(REACT_URI + "/api/users/loggedIn", {withCredentials:true})
             .then(res => {
                 console.log(res);
                 setLoggedInUser(res.data);
@@ -28,7 +28,7 @@ const Dashboard = () => {
     }, [history])
 
     const logout = (e) => {
-        axios.get("http://localhost:4000/api/users/logout", {withCredentials:true})
+        axios.get(REACT_URI + "/api/users/logout", {withCredentials:true})
             .then(res => {
                 console.log(res);
                 history.push("/");
@@ -39,7 +39,7 @@ const Dashboard = () => {
     }
 
     useEffect(() => {
-        axios.get("http://localhost:4000/api/user/" + username)
+        axios.get(REACT_URI + "/api/user/" + username)
             .then(res => {
                 console.log(res);
                 setProfileUser(res.data);
@@ -51,7 +51,7 @@ const Dashboard = () => {
     })
 
     useEffect(() => {
-        axios.get('http://localhost:4000/api/photos/user/' + profileUser._id)
+        axios.get(REACT_URI + '/api/photos/user/' + profileUser._id)
             .then((response) => {
                 console.log(response);
                 setImages(response.data.reverse());

@@ -20,7 +20,7 @@ const Login = () => {
 
     const login = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:4000/api/login", formInfo, {withCredentials:true})
+        axios.post(REACT_URI + "/api/login", formInfo, {withCredentials:true})
             .then(res => {
                 console.log(res);                
                 if (res.data.msg === "success!") {
