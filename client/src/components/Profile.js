@@ -48,7 +48,7 @@ const Dashboard = () => {
             .catch(err => {
                 console.log(err);
             })
-    }, [username, state])
+    }, [username, useMemo(state)])
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/photos/user/' + profileUser._id)
