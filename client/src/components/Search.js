@@ -9,10 +9,9 @@ const Search = () => {
     const [loaded, setLoaded] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
     const [users, setUsers] = useState({});
-    const { REACT_URI } = process.env;
 
     useEffect(() => {
-        axios.get(REACT_URI + "/api/users/loggedIn", {withCredentials:true})
+        axios.get(process.env.REACT_URI + "/api/users/loggedIn", {withCredentials:true})
             .then(res => {
                 console.log(res);
                 setLoggedInUser(res.data);
@@ -21,10 +20,10 @@ const Search = () => {
                 console.log(err);
                 history.push("/");
             })
-    }, [history, REACT_URI])
+    }, [history])
 
     const logout = (e) => {
-        axios.get(REACT_URI + "/api/users/logout", {withCredentials:true})
+        axios.get(process.env.REACT_URI + "/api/users/logout", {withCredentials:true})
             .then(res => {
                 console.log(res);
                 history.push("/");
@@ -35,7 +34,7 @@ const Search = () => {
     }
 
     useEffect(() => {
-        axios.get(REACT_URI + '/api/user/')
+        axios.get(process.env.REACT_URI + '/api/user/')
             .then((response) => {
                 console.log(response);
                 setUsers(response.data);
@@ -44,7 +43,7 @@ const Search = () => {
             .catch(err => {
                 console.log(err);
             })
-    }, [REACT_URI])
+    }, [])
 
     return ( 
         <div>

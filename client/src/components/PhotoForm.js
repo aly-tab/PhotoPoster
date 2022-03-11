@@ -11,7 +11,6 @@ const PhotoForm = (props) => {
     const [user_id] = useState(userId);
     const inputEl = useRef(null);
     const [errors] = useState([]);
-    const { REACT_URI } = process.env;
 
     const onSubmitHandler = e => {
         e.preventDefault();
@@ -21,7 +20,7 @@ const PhotoForm = (props) => {
         formData.append('user_id', user_id); 
         console.log(formData);
 
-        axios.post(REACT_URI + '/api/photos', formData)
+        axios.post(process.env.REACT_URI + '/api/photos', formData)
             .then(res=> {
                 console.log(res);
                 setPhoto("");

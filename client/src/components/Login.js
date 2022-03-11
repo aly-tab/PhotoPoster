@@ -11,8 +11,6 @@ const Login = () => {
 
     const [errorMsg, setErrorMsg] = useState("");
 
-    const { REACT_URI } = process.env;
-
     const changehandler = (e) => {
         setFormInfo({
             ...formInfo,
@@ -22,7 +20,7 @@ const Login = () => {
 
     const login = (e) => {
         e.preventDefault();
-        axios.post(REACT_URI + "/api/login", formInfo, {withCredentials:true})
+        axios.post(process.env.REACT_URI + "/api/login", formInfo, {withCredentials:true})
             .then(res => {
                 console.log(res);                
                 if (res.data.msg === "success!") {

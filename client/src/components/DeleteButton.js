@@ -4,10 +4,9 @@ import React from 'react';
 const DeleteButton = props => {
     const { id } = props;
     const {removeFromDom } = props;
-    const { REACT_URI } = process.env;
 
     const onClickHandler = e => {
-        axios.delete(REACT_URI + '/api/photos/' + id)
+        axios.delete(process.env.REACT_URI + '/api/photos/' + id)
             .then(response => {
                 console.log(response);
                 removeFromDom(id);

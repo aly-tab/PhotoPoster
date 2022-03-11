@@ -8,7 +8,7 @@ const DeleteAccount = props => {
     const { REACT_URI } = process.env;
 
     const onClickHandler = e => {
-        axios.delete(REACT_URI + '/api/user/' + id)
+        axios.delete(process.env.REACT_URI + '/api/user/' + id)
             .then(response => {
                 console.log(response);
                 history.push('/');

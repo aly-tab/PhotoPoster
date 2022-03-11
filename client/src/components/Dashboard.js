@@ -14,7 +14,7 @@ const Dashboard = () => {
     const { REACT_URI } = process.env;
 
     useEffect(() => {
-        axios.get(REACT_URI + "/api/users/loggedIn", {withCredentials:true})
+        axios.get(process.env.REACT_URI + "/api/users/loggedIn", {withCredentials:true})
             .then(res => {
                 console.log(res);
                 setLoggedInUser(res.data);
@@ -26,7 +26,7 @@ const Dashboard = () => {
     }, [history, REACT_URI])
 
     const logout = (e) => {
-        axios.get(REACT_URI + "/api/users/logout", {withCredentials:true})
+        axios.get(process.env.REACT_URI + "/api/users/logout", {withCredentials:true})
             .then(res => {
                 console.log(res);
                 history.push("/");

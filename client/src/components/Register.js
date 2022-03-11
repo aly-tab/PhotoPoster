@@ -13,8 +13,6 @@ const Register = () => {
 
     const [errors, setErrors] = useState({});
 
-    const { REACT_URI } = process.env;
-
     const changehandler = (e) => {
         setFormInfo({
             ...formInfo,
@@ -24,7 +22,7 @@ const Register = () => {
 
     const register = (e) => {
         e.preventDefault();
-        axios.post(REACT_URI + "/api/register", formInfo, {withCredentials:true})
+        axios.post(process.env.REACT_URI + "/api/register", formInfo, {withCredentials:true})
             .then(res => {
                 console.log(res);
                 if (res.data.errors) {

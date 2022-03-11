@@ -17,10 +17,9 @@ const DetailView = () => {
     state.change = change;
     state.setChange = setChange;
     const [loaded, setLoaded] = useState(false);
-    const { REACT_URI } = process.env;
 
     useEffect(() => {
-        axios.get(REACT_URI + "/api/users/loggedIn", {withCredentials:true})
+        axios.get(process.env.REACT_URI + "/api/users/loggedIn", {withCredentials:true})
             .then(res => {
                 console.log(res);
                 setLoggedInUser(res.data);
@@ -36,7 +35,7 @@ const DetailView = () => {
     }, [history, username, REACT_URI])
 
     const logout = (e) => {
-        axios.get(REACT_URI + "/api/users/logout", {withCredentials:true})
+        axios.get(process.env.REACT_URI + "/api/users/logout", {withCredentials:true})
             .then(res => {
                 console.log(res);
                 history.push("/");
@@ -47,7 +46,7 @@ const DetailView = () => {
     }
     
     useEffect(() => {
-        axios.get(REACT_URI + '/api/photos/' + id)
+        axios.get(process.env.REACT_URI + '/api/photos/' + id)
             .then(response => {
                 console.log(response);
                 if (response.data.name === "CastError") {
@@ -65,7 +64,7 @@ const DetailView = () => {
 
     const onSubmitHandler = (e, data) => {
         e.preventDefault();
-        axios.put(REACT_URI + '/api/photos/' + id, data)
+        axios.put(process.env.REACT_URI + '/api/photos/' + id, data)
             .then(response => {
                 console.log(response);
             })
