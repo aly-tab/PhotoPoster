@@ -6,7 +6,7 @@ const DeleteButton = props => {
     const {removeFromDom } = props;
 
     const onClickHandler = e => {
-        axios.delete(process.env.REACT_URI + '/api/photos/' + id)
+        axios.delete(process.env.REACT_URI + 'api/photos/' + id)
             .then(response => {
                 console.log(response);
                 removeFromDom(id);

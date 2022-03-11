@@ -7,7 +7,7 @@ const RedirectDeleteButton = props => {
     const history = useHistory();
 
     const onClickHandler = e => {
-        axios.delete(process.env.REACT_URI + '/api/photos/' + id)
+        axios.delete(process.env.REACT_URI + 'api/photos/' + id)
             .then(response => {
                 console.log(response);
                 history.push("/dashboard");
