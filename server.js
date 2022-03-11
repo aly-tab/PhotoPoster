@@ -4,14 +4,12 @@ const cookieParser = require('cookie-parser');
 
 require('dotenv').config();
 
-const { REACT_URI } = process.env;
-
 const app = express();
 
 require('./server/config/mongoose.config');
 
 app.use(cookieParser());
-app.use(cors({credentials: true, origin: REACT_URI}));
+app.use(cors({credentials: true, origin: process.env.REACT_URI}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
