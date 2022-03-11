@@ -21,7 +21,7 @@ const Account = () => {
                 console.log(err);
                 history.push("/");
             })
-    }, [history, REACT_URI])
+    }, [history])
 
     const logout = (e) => {
         axios.get(process.env.REACT_URI + "/api/users/logout", {withCredentials:true})
