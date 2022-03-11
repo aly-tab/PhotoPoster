@@ -19,7 +19,7 @@ const DetailView = () => {
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
-        axios.get(process.env.REACT_URI + "api/users/loggedIn", {withCredentials:true})
+        axios.get(process.env.REACT_URI + "/api/users/loggedIn", {withCredentials:true})
             .then(res => {
                 console.log(res);
                 setLoggedInUser(res.data);
@@ -35,7 +35,7 @@ const DetailView = () => {
     }, [history, username])
 
     const logout = (e) => {
-        axios.get(process.env.REACT_URI + "api/users/logout", {withCredentials:true})
+        axios.get(process.env.REACT_URI + "/api/users/logout", {withCredentials:true})
             .then(res => {
                 console.log(res);
                 history.push("/");
@@ -88,7 +88,7 @@ const DetailView = () => {
             </div>
             }
             <div id="detail">
-            <img src={`http://localhost:4000/${image.photo}`} alt=""/>
+            <img src={`${process.env.REACT_URI}/${image.photo}`} alt=""/>
                 <div id="form">
                     <form onSubmit={e => onSubmitHandler(e, {photo, text, hearts})}>
                         <input type="hidden" name="photo" value={photo}/>

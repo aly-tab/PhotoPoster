@@ -19,7 +19,7 @@ const DetailView = () => {
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
-        axios.get(process.env.REACT_URI + "api/users/loggedIn", {withCredentials:true})
+        axios.get(process.env.REACT_URI + "/api/users/loggedIn", {withCredentials:true})
             .then(res => {
                 console.log("RESPONSE" + res);
                 setLoggedInUser(res.data);
@@ -32,7 +32,7 @@ const DetailView = () => {
     }, [history])
 
     const logout = (e) => {
-        axios.get(process.env.REACT_URI + "api/users/logout", {withCredentials:true})
+        axios.get(process.env.REACT_URI + "/api/users/logout", {withCredentials:true})
             .then(res => {
                 console.log(res);
                 history.push("/");
@@ -61,7 +61,7 @@ const DetailView = () => {
 
     const addHeart = (e, data) => {
         e.preventDefault();
-        axios.put(process.env.REACT_URI + 'api/photos/' + id, data)
+        axios.put(process.env.REACT_URI + '/api/photos/' + id, data)
         .then((response) => {
             console.log(response);
             state.setChange(!state.change);
@@ -86,7 +86,7 @@ const DetailView = () => {
             </div>
             }
             <div id="detail">
-                <img src={`http://localhost:8000/${image.photo}`} alt=""/>
+                <img src={`${process.env.REACT_URI}/${image.photo}`} alt=""/>
                 <p>{image.text}</p>
                 <p>Give Hearts {image.hearts}</p>
                 <form onSubmit={e => addHeart(e, {photo, text, hearts})}>
