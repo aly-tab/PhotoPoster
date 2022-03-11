@@ -5,7 +5,6 @@ import { useHistory } from 'react-router-dom';
 const DeleteAccount = props => {
     const { id } = props;
     const history = useHistory();
-    const { REACT_URI } = process.env;
 
     const onClickHandler = e => {
         axios.delete(process.env.REACT_URI + '/api/user/' + id)
