@@ -8,6 +8,7 @@ const PhotoList = (props) => {
     const { loggedInUser } = props;
     const { state } = props;
     const [photos, setPhotos] = useState([]);
+    const { REACT_URI } = process.env;
 
     useEffect(() => {
         axios.get(REACT_URI + '/api/photos/user/' + userId)

@@ -11,6 +11,7 @@ const PhotoForm = (props) => {
     const [user_id] = useState(userId);
     const inputEl = useRef(null);
     const [errors] = useState([]);
+    const { REACT_URI } = process.env;
 
     const onSubmitHandler = e => {
         e.preventDefault();

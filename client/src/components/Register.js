@@ -13,6 +13,8 @@ const Register = () => {
 
     const [errors, setErrors] = useState({});
 
+    const { REACT_URI } = process.env;
+
     const changehandler = (e) => {
         setFormInfo({
             ...formInfo,

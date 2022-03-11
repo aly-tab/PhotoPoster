@@ -11,6 +11,8 @@ const Login = () => {
 
     const [errorMsg, setErrorMsg] = useState("");
 
+    const { REACT_URI } = process.env;
+
     const changehandler = (e) => {
         setFormInfo({
             ...formInfo,

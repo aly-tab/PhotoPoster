@@ -7,6 +7,7 @@ const Account = () => {
     const [loggedInUser, setLoggedInUser] = useState(null);
     const history = useHistory();
     const [loaded, setLoaded] = useState(false);
+    const { REACT_URI } = process.env;
 
 
 

@@ -9,6 +9,7 @@ const Search = () => {
     const [loaded, setLoaded] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
     const [users, setUsers] = useState({});
+    const { REACT_URI } = process.env;
 
     useEffect(() => {
         axios.get(REACT_URI + "/api/users/loggedIn", {withCredentials:true})

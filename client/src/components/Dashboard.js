@@ -11,6 +11,7 @@ const Dashboard = () => {
     const [change, setChange] = useState(false);
     state.change = change;
     state.setChange = setChange;
+    const { REACT_URI } = process.env;
 
     useEffect(() => {
         axios.get(REACT_URI + "/api/users/loggedIn", {withCredentials:true})

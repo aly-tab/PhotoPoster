@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 const RedirectDeleteButton = props => {
     const { id } = props;
     const history = useHistory();
+    const { REACT_URI } = process.env;
 
     const onClickHandler = e => {
         axios.delete(REACT_URI + '/api/photos/' + id)
