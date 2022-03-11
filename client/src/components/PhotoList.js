@@ -10,7 +10,7 @@ const PhotoList = (props) => {
     const [photos, setPhotos] = useState([]);
 
     useEffect(() => {
-        axios.get('/api/photos/user/' + userId)
+        axios.get('http://localhost:8000/api/photos/user/' + userId)
             .then((response) => {
                 console.log(response);
                 console.log(userId);

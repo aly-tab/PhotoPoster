@@ -22,7 +22,7 @@ const Register = () => {
 
     const register = (e) => {
         e.preventDefault();
-        axios.post("/api/register", formInfo, {withCredentials:true})
+        axios.post("http://localhost:8000/api/register", formInfo, {withCredentials:true})
             .then(res => {
                 console.log(res);
                 if (res.data.errors) {
