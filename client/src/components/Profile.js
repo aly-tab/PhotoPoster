@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useHistory, useParams } from 'react-router-dom';
 import DeleteButton from './DeleteButton';
 
@@ -48,7 +48,7 @@ const Dashboard = () => {
             .catch(err => {
                 console.log(err);
             })
-    }, [username, useMemo(state)])
+    }, [username, state.change])
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/photos/user/' + profileUser._id)
