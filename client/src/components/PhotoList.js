@@ -20,7 +20,7 @@ const PhotoList = (props) => {
             .catch(err => {
                 console.log(err);
             })
-    }, [state.change, userId])
+    }, [state.change, userId, REACT_URI])
 
     const removeFromDom = photoId => {
         setPhotos(photos.filter(photo => photo._id !== photoId))

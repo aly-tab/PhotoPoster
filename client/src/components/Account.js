@@ -22,7 +22,7 @@ const Account = () => {
                 console.log(err);
                 history.push("/");
             })
-    }, [history])
+    }, [history, REACT_URI])
 
     const logout = (e) => {
         axios.get(REACT_URI + "/api/users/logout", {withCredentials:true})

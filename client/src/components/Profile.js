@@ -26,7 +26,7 @@ const Dashboard = () => {
                 console.log(err);
                 history.push("/");
             })
-    }, [history])
+    }, [history, REACT_URI])
 
     const logout = (e) => {
         axios.get(REACT_URI + "/api/users/logout", {withCredentials:true})
@@ -62,7 +62,7 @@ const Dashboard = () => {
             .catch(err => {
                 console.log(err);
             })
-    }, [state.change, profileUser._id])
+    }, [state.change, profileUser._id, REACT_URI])
 
 
     const removeFromDom = imgId => {

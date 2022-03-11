@@ -21,7 +21,7 @@ const Search = () => {
                 console.log(err);
                 history.push("/");
             })
-    }, [history])
+    }, [history, REACT_URI])
 
     const logout = (e) => {
         axios.get(REACT_URI + "/api/users/logout", {withCredentials:true})
@@ -44,7 +44,7 @@ const Search = () => {
             .catch(err => {
                 console.log(err);
             })
-    }, [])
+    }, [REACT_URI])
 
     return ( 
         <div>

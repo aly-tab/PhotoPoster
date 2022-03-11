@@ -33,7 +33,7 @@ const DetailView = () => {
                 console.log(err);
                 history.push("/");
             })
-    }, [history, username])
+    }, [history, username, REACT_URI])
 
     const logout = (e) => {
         axios.get(REACT_URI + "/api/users/logout", {withCredentials:true})
@@ -61,7 +61,7 @@ const DetailView = () => {
             .catch(err => {
                 console.log(err);
             })
-    }, [state.change, history, id])
+    }, [state.change, history, id, REACT_URI])
 
     const onSubmitHandler = (e, data) => {
         e.preventDefault();

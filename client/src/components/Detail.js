@@ -30,7 +30,7 @@ const DetailView = () => {
                 console.log(err);
                 history.push("/");
             })
-    }, [history])
+    }, [history, REACT_URI])
 
     const logout = (e) => {
         axios.get(REACT_URI + "/api/users/logout", {withCredentials:true})
@@ -58,7 +58,7 @@ const DetailView = () => {
             .catch(err => {
                 console.log(err);
             })
-    }, [state.change, history, id])
+    }, [state.change, history, id, REACT_URI])
 
     const addHeart = (e, data) => {
         e.preventDefault();
