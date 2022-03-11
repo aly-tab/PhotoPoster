@@ -98,12 +98,12 @@ const Dashboard = () => {
                                     <p>Hearts {img.hearts}</p>
                                     <Link className="btm-link" to={"/" + profileUser.username + "/" + img._id}>View</Link> 
                                     <span> </span>
-                                    { profileUser.username == loggedInUser.username?
+                                    { profileUser.username === loggedInUser.username?
                                     <Link className="btm-link" to={"/" + profileUser.username + "/" + img._id + "/edit"}>Edit</Link> :
                                     ""
                                     } 
                                     <span> </span>
-                                    { profileUser.username == loggedInUser.username?
+                                    { profileUser.username === loggedInUser.username?
                                     <DeleteButton id={img._id} removeFromDom={removeFromDom}/> :
                                     ""
                                     }
