@@ -7,7 +7,7 @@ const DeleteAccount = props => {
     const history = useHistory();
 
     const onClickHandler = e => {
-        axios.delete('http://localhost:8000/api/user/' + id)
+        axios.delete('http://localhost:4000/api/user/' + id)
             .then(response => {
                 console.log(response);
                 history.push('/');

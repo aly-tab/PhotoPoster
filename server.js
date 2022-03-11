@@ -9,7 +9,7 @@ const app = express();
 require('./server/config/mongoose.config');
 
 app.use(cookieParser());
-app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
+app.use(cors({credentials: true, origin: 'http://localhost:4000'}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -20,8 +20,10 @@ require('./server/routes/login.routes')(app);
 require('./server/routes/user.routes')(app);
 require('./server/routes/photo.routes')(app);
 
-app.listen(8000, () => {
-    console.log("Listening at port 8000");
+port = 4000
+
+app.listen(port, () => {
+    console.log(`Listening at port ${port}`);
 })
 
 

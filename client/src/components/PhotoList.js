@@ -10,7 +10,7 @@ const PhotoList = (props) => {
     const [photos, setPhotos] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/photos/user/' + userId)
+        axios.get('http://localhost:4000/api/photos/user/' + userId)
             .then((response) => {
                 console.log(response);
                 console.log(userId);
@@ -30,7 +30,7 @@ const PhotoList = (props) => {
             {photos.map((photo, index) => {
                 return (
                     <div key={index} className="photo">
-                        <img src={`http://localhost:8000/${photo.photo}`} alt=""/>
+                        <img src={`http://localhost:4000/${photo.photo}`} alt=""/>
                         <p>{photo.text}</p>
                         <p>Hearts {photo.hearts}</p>
                         <Link className="btm-link" to={"/" + loggedInUser+ "/" + photo._id}>View</Link> <Link className="btm-link" to={"/" + loggedInUser + "/" + photo._id + "/edit"}>Edit</Link> <DeleteButton id={photo._id} removeFromDom={removeFromDom}/>

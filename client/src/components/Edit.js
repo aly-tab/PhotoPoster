@@ -19,7 +19,7 @@ const DetailView = () => {
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
-        axios.get("http://localhost:8000/api/users/loggedIn", {withCredentials:true})
+        axios.get("http://localhost:4000/api/users/loggedIn", {withCredentials:true})
             .then(res => {
                 console.log(res);
                 setLoggedInUser(res.data);
@@ -35,7 +35,7 @@ const DetailView = () => {
     }, [history, username])
 
     const logout = (e) => {
-        axios.get("http://localhost:8000/api/users/logout", {withCredentials:true})
+        axios.get("http://localhost:4000/api/users/logout", {withCredentials:true})
             .then(res => {
                 console.log(res);
                 history.push("/");
@@ -46,7 +46,7 @@ const DetailView = () => {
     }
     
     useEffect(() => {
-        axios.get('http://localhost:8000/api/photos/' + id)
+        axios.get('http://localhost:4000/api/photos/' + id)
             .then(response => {
                 console.log(response);
                 if (response.data.name === "CastError") {
@@ -64,7 +64,7 @@ const DetailView = () => {
 
     const onSubmitHandler = (e, data) => {
         e.preventDefault();
-        axios.put('http://localhost:8000/api/photos/' + id, data)
+        axios.put('http://localhost:4000/api/photos/' + id, data)
             .then(response => {
                 console.log(response);
             })
@@ -88,7 +88,7 @@ const DetailView = () => {
             </div>
             }
             <div id="detail">
-            <img src={`http://localhost:8000/${image.photo}`} alt=""/>
+            <img src={`http://localhost:4000/${image.photo}`} alt=""/>
                 <div id="form">
                     <form onSubmit={e => onSubmitHandler(e, {photo, text, hearts})}>
                         <input type="hidden" name="photo" value={photo}/>

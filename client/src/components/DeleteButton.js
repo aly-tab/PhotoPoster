@@ -6,7 +6,7 @@ const DeleteButton = props => {
     const {removeFromDom } = props;
 
     const onClickHandler = e => {
-        axios.delete('http://localhost:8000/api/photos/' + id)
+        axios.delete('http://localhost:4000/api/photos/' + id)
             .then(response => {
                 console.log(response);
                 removeFromDom(id);

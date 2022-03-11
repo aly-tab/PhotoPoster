@@ -23,7 +23,7 @@ const Search = () => {
     }, [history])
 
     const logout = (e) => {
-        axios.get("http://localhost:8000/api/users/logout", {withCredentials:true})
+        axios.get("http://localhost:4000/api/users/logout", {withCredentials:true})
             .then(res => {
                 console.log(res);
                 history.push("/");
@@ -34,7 +34,7 @@ const Search = () => {
     }
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/user/')
+        axios.get('http://localhost:4000/api/user/')
             .then((response) => {
                 console.log(response);
                 setUsers(response.data);
