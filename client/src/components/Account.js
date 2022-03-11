@@ -21,7 +21,7 @@ const Account = () => {
                 console.log(err);
                 history.push("/");
             })
-    }, [])
+    }, [history])
 
     const logout = (e) => {
         axios.get("http://localhost:8000/api/users/logout", {withCredentials:true})
