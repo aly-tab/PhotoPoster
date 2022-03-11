@@ -23,7 +23,7 @@ const Login = () => {
         axios.post("http://localhost:8000/api/login", formInfo, {withCredentials:true})
             .then(res => {
                 console.log(res);                
-                if (res.data.msg == "success!") {
+                if (res.data.msg === "success!") {
                     history.push("/dashboard");
                 } else {
                     setErrorMsg(res.data.msg);
