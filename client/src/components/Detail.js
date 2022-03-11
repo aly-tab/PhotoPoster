@@ -86,22 +86,22 @@ const DetailView = () => {
             </div>
             }
             <div id="detail">
-                <img src={`http://localhost:8000/${image.photo}`} />
+                <img src={`http://localhost:8000/${image.photo}`} alt=""/>
                 <p>{image.text}</p>
                 <p>Give Hearts {image.hearts}</p>
                 <form onSubmit={e => addHeart(e, {photo, text, hearts})}>
                     <input type="hidden" name="photo" value={photo} />
                     <input type="hidden" name="text" value={text} />
                     <input type="hidden" name="hearts" value={hearts} />                
-                    <input className="heart" type="image" src={`http://localhost:8000/heart.png`} />
+                    <input className="heart" type="image" src={`http://localhost:8000/heart.png`} alt=""/>
                 </form>
                 <div id="detail-btns">
-               {loaded && loggedInUser.username == username?
+               {loaded && loggedInUser.username === username?
                     <Link className="btm-link" to={"/" + loggedInUser.username + "/" + image._id + "/edit"}>Edit</Link> :
                     ""
                     } 
                     <span> </span>
-                    {loaded &&  loggedInUser.username == username?
+                    {loaded &&  loggedInUser.username === username?
                     <RedirectDeleteButton id={image._id}/> :
                     ""
                     }

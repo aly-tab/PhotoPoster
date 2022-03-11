@@ -19,7 +19,7 @@ const PhotoList = (props) => {
             .catch(err => {
                 console.log(err);
             })
-    }, [state.change])
+    }, [state.change, userId])
 
     const removeFromDom = photoId => {
         setPhotos(photos.filter(photo => photo._id !== photoId))
@@ -30,7 +30,7 @@ const PhotoList = (props) => {
             {photos.map((photo, index) => {
                 return (
                     <div key={index} className="photo">
-                        <img src={`http://localhost:8000/${photo.photo}`}/>
+                        <img src={`http://localhost:8000/${photo.photo}`} alt=""/>
                         <p>{photo.text}</p>
                         <p>Hearts {photo.hearts}</p>
                         <Link className="btm-link" to={"/" + loggedInUser+ "/" + photo._id}>View</Link> <Link className="btm-link" to={"/" + loggedInUser + "/" + photo._id + "/edit"}>Edit</Link> <DeleteButton id={photo._id} removeFromDom={removeFromDom}/>

@@ -8,9 +8,9 @@ const PhotoForm = (props) => {
     const { state } = props;
     const [photo, setPhoto] = useState("");
     const [text, setText] = useState("");
-    const [user_id, setUser_Id] = useState(userId);
+    const [user_id] = useState(userId);
     const inputEl = useRef(null);
-    const [errors, setErrors] = useState([]);
+    const [errors] = useState([]);
 
     const onSubmitHandler = e => {
         e.preventDefault();

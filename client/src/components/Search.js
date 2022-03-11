@@ -1,12 +1,11 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { Link, useHistory, useParams } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import SearchList from './SearchList';
 
 const Search = () => {
     const [loggedInUser, setLoggedInUser] = useState(null);
     const history = useHistory();
-    const { id } = useParams();
     const [loaded, setLoaded] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
     const [users, setUsers] = useState({});
@@ -21,7 +20,7 @@ const Search = () => {
                 console.log(err);
                 history.push("/");
             })
-    }, [])
+    }, [history])
 
     const logout = (e) => {
         axios.get("http://localhost:8000/api/users/logout", {withCredentials:true})
@@ -65,7 +64,7 @@ const Search = () => {
                                 <input className="search" onChange={e=>setSearchTerm(e.target.value)} type="text" placeholder="Search for a user's profile"/>
                             </div>
                         </form>
-                        {loaded && searchTerm != "" ? <SearchList users={users} searchTerm={searchTerm}/>: ""}
+                        {loaded && searchTerm !== "" ? <SearchList users={users} searchTerm={searchTerm}/>: ""}
                     </div>
                 </div> : 
             <p>error</p>}

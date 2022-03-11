@@ -24,7 +24,7 @@ const DetailView = () => {
                 console.log(res);
                 setLoggedInUser(res.data);
                 setLoaded(true);
-                if (res.data.username != username) {
+                if (res.data.username !== username) {
                     history.push('/dashboard');
                 }
             })
@@ -32,7 +32,7 @@ const DetailView = () => {
                 console.log(err);
                 history.push("/");
             })
-    }, [])
+    }, [history, username])
 
     const logout = (e) => {
         axios.get("http://localhost:8000/api/users/logout", {withCredentials:true})
@@ -60,7 +60,7 @@ const DetailView = () => {
             .catch(err => {
                 console.log(err);
             })
-    }, [state.change])
+    }, [state.change, history, id])
 
     const onSubmitHandler = (e, data) => {
         e.preventDefault();
@@ -88,7 +88,7 @@ const DetailView = () => {
             </div>
             }
             <div id="detail">
-            <img src={`http://localhost:8000/${image.photo}`} />
+            <img src={`http://localhost:8000/${image.photo}`} alt=""/>
                 <div id="form">
                     <form onSubmit={e => onSubmitHandler(e, {photo, text, hearts})}>
                         <input type="hidden" name="photo" value={photo}/>

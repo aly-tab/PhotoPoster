@@ -25,7 +25,7 @@ const Dashboard = () => {
                 console.log(err);
                 history.push("/");
             })
-    }, [])
+    }, [history])
 
     const logout = (e) => {
         axios.get("http://localhost:8000/api/users/logout", {withCredentials:true})
@@ -48,7 +48,7 @@ const Dashboard = () => {
             .catch(err => {
                 console.log(err);
             })
-    }, [username])
+    }, [username, state])
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/photos/user/' + profileUser._id)
@@ -61,7 +61,7 @@ const Dashboard = () => {
             .catch(err => {
                 console.log(err);
             })
-    }, [state.change])
+    }, [state.change, profileUser._id])
 
 
     const removeFromDom = imgId => {
@@ -77,7 +77,7 @@ const Dashboard = () => {
                         <h1>Logged in as {loggedInUser.username}</h1>
                         <div id="link-btns">
                             <Link className="link" to={"/search"}>Search</Link>
-                            {profileUser._id != loggedInUser._id?
+                            {profileUser._id !== loggedInUser._id?
                             <Link className="link" to={"/" + loggedInUser.username}>Profile</Link>:
                             ""
                             }
@@ -93,7 +93,7 @@ const Dashboard = () => {
                         {images.map((img, index) => {
                             return (
                                 <div key={index} className="photo">
-                                    <img src={`http://localhost:8000/${img.photo}`}/>
+                                    <img src={`http://localhost:8000/${img.photo}`} alt=""/>
                                     <p>{img.text}</p>
                                     <p>Hearts {img.hearts}</p>
                                     <Link className="btm-link" to={"/" + profileUser.username + "/" + img._id}>View</Link> 
