@@ -24,7 +24,7 @@ class UserController {
                     bcrypt.compare(req.body.password, user.password)
                         .then(passwordIsValid => {
                             if (passwordIsValid) {
-                                res.cookie("usertoken", jwt.sign({_id: user._id}, process.env.SECRET_KEY) , {httpOnly:true})
+                                res.cookie("usertoken", jwt.sign({_id: user._id}, "first key value") , {httpOnly:true})
                                 .json({msg: "success!"});
                             } else {
                                 res.json({msg: "Invalid login attempt"})
