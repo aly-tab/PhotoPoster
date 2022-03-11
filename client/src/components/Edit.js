@@ -17,6 +17,7 @@ const DetailView = () => {
     state.change = change;
     state.setChange = setChange;
     const [loaded, setLoaded] = useState(false);
+    const { REACT_URI } = process.env;
 
     useEffect(() => {
         axios.get(REACT_URI + "/api/users/loggedIn", {withCredentials:true})
