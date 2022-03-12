@@ -46,7 +46,7 @@ const DetailView = () => {
     }
     
     useEffect(() => {
-        axios.get('api/photos/' + id)
+        axios.get('/api/photos/' + id)
             .then(response => {
                 console.log(response);
                 if (response.data.name === "CastError") {
@@ -64,7 +64,7 @@ const DetailView = () => {
 
     const onSubmitHandler = (e, data) => {
         e.preventDefault();
-        axios.put('api/photos/' + id, data)
+        axios.put('/api/photos/' + id, data)
             .then(response => {
                 console.log(response);
             })
