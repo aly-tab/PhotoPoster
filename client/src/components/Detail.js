@@ -43,7 +43,7 @@ const DetailView = () => {
     }
     
     useEffect(() => {
-        axios.get('api/photos/' + id)
+        axios.get('/api/photos/' + id)
             .then(response => {
                 console.log(response);
                 if (response.data.name === "CastError") {
@@ -93,7 +93,7 @@ const DetailView = () => {
                     <input type="hidden" name="photo" value={photo} />
                     <input type="hidden" name="text" value={text} />
                     <input type="hidden" name="hearts" value={hearts} />                
-                    <input className="heart" type="image" src={`http://localhost:8000/heart.png`} alt=""/>
+                    <input className="heart" type="image" src={`/heart.png`} alt=""/>
                 </form>
                 <div id="detail-btns">
                {loaded && loggedInUser.username === username?
