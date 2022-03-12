@@ -30,7 +30,7 @@ const PhotoList = (props) => {
             {photos.map((photo, index) => {
                 return (
                     <div key={index} className="photo">
-                        <img src={`${process.env.REACT_URI}/${photo.photo}`} alt=""/>
+                        <img src={`/${photo.photo}`} alt=""/>
                         <p>{photo.text}</p>
                         <p>Hearts {photo.hearts}</p>
                         <Link className="btm-link" to={"/" + loggedInUser+ "/" + photo._id}>View</Link> <Link className="btm-link" to={"/" + loggedInUser + "/" + photo._id + "/edit"}>Edit</Link> <DeleteButton id={photo._id} removeFromDom={removeFromDom}/>

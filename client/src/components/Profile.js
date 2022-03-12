@@ -93,7 +93,7 @@ const Dashboard = () => {
                         {images.map((img, index) => {
                             return (
                                 <div key={index} className="photo">
-                                    <img src={`${process.env.REACT_URI}/${img.photo}`} alt=""/>
+                                    <img src={`/${img.photo}`} alt=""/>
                                     <p>{img.text}</p>
                                     <p>Hearts {img.hearts}</p>
                                     <Link className="btm-link" to={"/" + profileUser.username + "/" + img._id}>View</Link> 

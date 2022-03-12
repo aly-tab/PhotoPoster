@@ -88,7 +88,7 @@ const DetailView = () => {
             </div>
             }
             <div id="detail">
-            <img src={`${process.env.REACT_URI}/${image.photo}`} alt=""/>
+            <img src={`/${image.photo}`} alt=""/>
                 <div id="form">
                     <form onSubmit={e => onSubmitHandler(e, {photo, text, hearts})}>
                         <input type="hidden" name="photo" value={photo}/>
