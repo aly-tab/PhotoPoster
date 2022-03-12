@@ -20,7 +20,7 @@ require('./server/routes/login.routes')(app);
 require('./server/routes/user.routes')(app);
 require('./server/routes/photo.routes')(app);
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
     console.log(`Listening at port ${port}`);
