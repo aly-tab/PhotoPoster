@@ -11,7 +11,7 @@ const Search = () => {
     const [users, setUsers] = useState({});
 
     useEffect(() => {
-        axios.get("/api/users/loggedIn", {withCredentials:true})
+        axios.get(process.env.REACT_URI + "/api/users/loggedIn", {withCredentials:true})
             .then(res => {
                 console.log(res);
                 setLoggedInUser(res.data);
@@ -23,7 +23,7 @@ const Search = () => {
     }, [history])
 
     const logout = (e) => {
-        axios.get("/api/users/logout", {withCredentials:true})
+        axios.get(process.env.REACT_URI + "/api/users/logout", {withCredentials:true})
             .then(res => {
                 console.log(res);
                 history.push("/");
