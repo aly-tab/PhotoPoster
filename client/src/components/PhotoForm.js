@@ -20,7 +20,7 @@ const PhotoForm = (props) => {
         formData.append('user_id', user_id); 
         console.log(formData);
 
-        axios.post(process.env.REACT_URI + '/api/photos', formData)
+        axios.post('/api/photos', formData)
             .then(res=> {
                 console.log(res);
                 setPhoto("");
